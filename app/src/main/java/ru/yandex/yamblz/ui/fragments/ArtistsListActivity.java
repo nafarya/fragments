@@ -31,6 +31,7 @@ import ru.yandex.yamblz.MyJsonParser;
 import ru.yandex.yamblz.R;
 import ru.yandex.yamblz.database.ArtistDataSource;
 import ru.yandex.yamblz.ui.adapters.ArtistAdapter;
+import ru.yandex.yamblz.ui.adapters.TabAdapter;
 
 /**
  * Created by danil on 25.04.16.
@@ -39,6 +40,8 @@ public class ArtistsListActivity extends Fragment{
     private DownloadTask downloadTask;
     private RecyclerView mRecyclerView;
     private ArtistAdapter mAdapter;
+    private TabAdapter tabAdapter;
+
     private RecyclerView.LayoutManager mLayoutManager;
     public List<Artist> artists;
     private ArtistDataSource dataSource = null;
@@ -52,7 +55,6 @@ public class ArtistsListActivity extends Fragment{
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new ArtistAdapter(getActivity());
-
 
         dataSource = new ArtistDataSource(getActivity());
         dataSource.open();

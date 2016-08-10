@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import org.w3c.dom.Text;
 
 import java.net.URL;
 
+import ru.yandex.yamblz.Model.Artist;
 import ru.yandex.yamblz.R;
 
 /**
@@ -29,6 +31,15 @@ public class ArtistFragment extends Fragment {
     private TextView large_text;
     private ImageView imageView;
     private ImageButton imageButton;
+
+    public static Fragment newInstance(Artist artist) {
+        ArtistFragment artistFragment = new ArtistFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("bio", artist.getDescription());
+        bundle.putString("pic", artist.getCover().getBigCoverImage());
+        artistFragment.setArguments(bundle);
+        return artistFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -56,36 +57,30 @@ public class ArtistInfoActivity extends FragmentActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_layout);
+
         if (findViewById(R.id.fragment_container) != null) {
             if (savedInstanceState != null) {
                 return;
             }
             Log.i("fxf", "STARTING");
-
             ArtistsListActivity firstFragment = new ArtistsListActivity();
             Log.i("fxf", "FINISHED");
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
         }
+        ;
 
-
-        (findViewById(R.id.toolbarImageButtonMailId)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent mailer = new Intent(Intent.ACTION_SEND);
-                mailer.setType("text/plain");
-                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"danyaschenko@gmail.com"});
-                mailer.putExtra(Intent.EXTRA_SUBJECT, "super-app");
-                mailer.putExtra(Intent.EXTRA_TEXT, "best eu");
-                startActivity(Intent.createChooser(mailer, "Send email..."));
-            }
+        (findViewById(R.id.toolbarImageButtonMailId)).setOnClickListener(v -> {
+            Intent mailer = new Intent(Intent.ACTION_SEND);
+            mailer.setType("text/plain");
+            mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"danyaschenko@gmail.com"});
+            mailer.putExtra(Intent.EXTRA_SUBJECT, "super-app");
+            mailer.putExtra(Intent.EXTRA_TEXT, "best eu");
+            startActivity(Intent.createChooser(mailer, "Send email..."));
         });
 
-        (findViewById(R.id.toolbarImageButtonInfoId)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InfoFragment infoFragment = new InfoFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, infoFragment).addToBackStack(null).commit();
-            }
+        (findViewById(R.id.toolbarImageButtonInfoId)).setOnClickListener(v -> {
+            InfoFragment infoFragment = new InfoFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, infoFragment).addToBackStack(null).commit();
         });
 
     }
