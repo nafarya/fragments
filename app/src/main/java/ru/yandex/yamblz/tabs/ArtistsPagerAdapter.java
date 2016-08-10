@@ -33,6 +33,6 @@ public class ArtistsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "hello beach";
+        return artists.get(position).getName();
     }
 }

@@ -12,25 +12,14 @@
         android:contentDescription="@string/artist" />
 
     <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/more"
         android:id="@+id/buttonMore"
+        android:layout_marginBottom="37dp"
+        android:gravity="center"
+        android:layout_width="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textArtistDescription"
-        android:layout_above="@+id/buttonMore"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageArtist" />
 
 </RelativeLayout>

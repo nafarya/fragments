@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,9 +33,6 @@ public class ArtistPreviewFragment extends Fragment {
 
     @BindView(R.id.imageArtist)
     ImageView artistImageView;
-
-    @BindView(R.id.textArtistDescription)
-    TextView artistDescription;
 
     @OnClick(R.id.buttonMore)
     void onClick() {
