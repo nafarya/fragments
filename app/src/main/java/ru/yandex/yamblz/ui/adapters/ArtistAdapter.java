@@ -21,7 +21,7 @@ import ru.yandex.yamblz.Model.Artist;
 import ru.yandex.yamblz.R;
 import ru.yandex.yamblz.ui.fragments.ArtistClickListener;
 import ru.yandex.yamblz.ui.fragments.ArtistFragment;
-import ru.yandex.yamblz.ui.fragments.ArtistInfoActivity;
+import ru.yandex.yamblz.ui.fragments.ArtistListActivity;
 
 /**
  * Created by danil on 25.04.16.
@@ -83,7 +83,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ViewHolder
     @Override
     public void onArtistClicked(int position) {
 
-        Intent intent = ArtistInfoActivity.getIntent(context, mDataset.get(position));
+        Intent intent = ArtistListActivity.getIntent(context, mDataset.get(position));
         Bundle bundle = new Bundle();
         bundle.putString("bio", mDataset.get(position).getDescription());
         bundle.putString("pic", mDataset.get(position).getCover().getBigCoverImage());

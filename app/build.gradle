@@ -15,7 +15,8 @@ android {
         applicationId 'ru.yandex.yamblz'
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
-        versionCode versions.code // Notice that you may want to use BUILD_NUMBER from CI in real project with own CI.
+        versionCode versions.code
+        // Notice that you may want to use BUILD_NUMBER from CI in real project with own CI.
         versionName versions.name
 
         // Make generated apks contain version name and code.
@@ -104,8 +105,7 @@ dependencies {
     compile libraries.tinyDancer
     compile libraries.lynx
     compile libraries.processPhoenix
-    compile 'com.googlecode.json-simple:json-simple:1.1'
-    compile 'com.squareup.picasso:picasso:2.5.2'
+
 
     testCompile libraries.junit
     testCompile libraries.robolectric
@@ -123,6 +123,9 @@ dependencies {
         exclude module: 'recyclerview-v7'
         exclude module: 'support-v4'
     }
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:support-v4:23.4.0'
 }
 
 configurations.all {
